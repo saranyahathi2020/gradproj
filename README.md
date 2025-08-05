@@ -23,3 +23,41 @@ Use Swagger: Access API documentation at http://localhost:8080/swagger-ui.html.
  2.Enable Actuator Endpoints
  3.Access Actuator Endpoints
  4.Use Monitoring Tools: Integrate with tools like Prometheus or Grafana for advanced monitoring and visualization.
+function doubleCheese()
+{
+  console.log('double cheese');
+  
+}
+async function pageLoaded()
+{
+    console.log('page loaded');
+    let ulRef=document.getElementById('ulid')
+    console.log(ulRef);
+    let newLi=document.createElement('li')
+    newLi.innerHTML='god'
+    ulRef.appendChild(newLi)
+    console.log(newLi);
+    
+    let cities=['pune','hyd','bngl','tokyo']
+    //multiple li elements on the fly
+let cityol=document.getElementById('citylist');
+cities.forEach((c)=>
+{
+    let newCity=document.createElement('li')
+    newCity.innerHTML=c
+    cityol.appendChild(newCity)
+
+})
+
+ let response=await fetch('http://localhost:8888/trades/all')
+ console.log(response)
+ if(!response.ok)
+ {
+  console.log('unable to call endpoint');
+  
+ }
+ let data=await response.json()
+ console.log(data);
+ 
+
+}
